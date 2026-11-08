@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- المهمة الأولى -->
+        <record id="demo_task_1" model="todo.task">
+            <field name="name">استكمال كورس أودو الأساسي</field>
+            <field name="description">إنهاء الفيديوهات الثلاثة الأولى من مسار التطوير على منصة أودو التعليمية.</field>
+            <field name="deadline" eval="(datetime.now() + relativedelta(days=2)).strftime('%Y-%m-%d')"/>
+            <field name="is_completed">False</field>
+        </record>
+
+        <!-- المهمة الثانية -->
+        <record id="demo_task_2" model="todo.task">
+            <field name="name">رفع الموديول على حساب GitHub</field>
+            <field name="description">إعداد ملف README باللغة الإنجليزية وعمل Push للأكواد لإنشاء معرض أعمال قوي.</field>
+            <field name="deadline" eval="datetime.now().strftime('%Y-%m-%d')"/>
+            <field name="is_completed">True</field>
+        </record>
+
+        <!-- المهمة الثالثة -->
+        <record id="demo_task_3" model="todo.task">
+            <field name="name">تجهيز بيئة العمل على Zorin OS</field>
+            <field name="description">مراجعة حزم بايثون وإعداد قاعدة بيانات PostgreSQL وتفعيل PyCharm محلياً.</field>
+            <field name="deadline" eval="(datetime.now() - relativedelta(days=1)).strftime('%Y-%m-%d')"/>
+            <field name="is_completed">True</field>
+        </record>
+    </data>
+</odoo>
